@@ -14,6 +14,16 @@ public class MongoDBService
         MongoClient client = new MongoClient(mongoDBSettings.Value.ConnectionURI);
         IMongoDatabase database = client.GetDatabase(mongoDBSettings.Value.DatabaseName);
         _items = database.GetCollection<Item>(mongoDBSettings.Value.ItemsCollectionName);
+
+        try
+        {
+            var result = client.GetDatabase("dnd-app").RunCommand<BsonDocument>(new BsonDocument("ping", 1));
+            Console.WriteLine("Pinged your deployment. You successfully connected to MongoDB!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
     }
 
     public async Task<List<Item>> GetAsync()
