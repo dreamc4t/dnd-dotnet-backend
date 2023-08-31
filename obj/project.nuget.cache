@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "jTEg8DSU1lXKM6mRxtXytMykC6ZqD8KRz9VByH7aRk4d8S+p6Egzd8cZ4YRyNqF6uLTfYh1t8Za4qx1bzhNC0Q==",
+  "success": true,
+  "projectFilePath": "/Users/eriksund/Desktop/DndBackend/DndBackend.csproj",
+  "expectedPackageFiles": [
+    "/Users/eriksund/.nuget/packages/microsoft.aspnetcore.openapi/7.0.10/microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
+    "/Users/eriksund/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/eriksund/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/eriksund/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/Users/eriksund/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/eriksund/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/eriksund/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
