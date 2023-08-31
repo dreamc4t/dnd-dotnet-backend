@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace DndBackend.Models;
 
-public class Item
+public class Weapon
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
@@ -25,10 +25,17 @@ public class Item
     [BsonElement("weight")]
     public string? Weight { get; set; }
 
+    [BsonElement("damage")]
+    public string? Damage { get; set; }
+
+    [BsonElement("properties")]
+    public string? Properties { get; set; }
+
     [BsonElement("tags")]
     public string[] Tags { get; set; } = Array.Empty<string>();
 
     [BsonElement("link")]
     public string Link { get; set; } = null!;
+
 
 }

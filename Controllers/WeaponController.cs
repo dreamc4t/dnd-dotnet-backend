@@ -6,24 +6,24 @@ namespace DndBackend.Controllers;
 
 [Controller]
 [Route("api/[controller]")]
-public class ItemController : Controller
+public class WeaponController : Controller
 {
     private readonly MongoDBService _mongoDBService;
 
-    public ItemController(MongoDBService mongoDBService)
+    public WeaponController(MongoDBService mongoDBService)
     {
         _mongoDBService = mongoDBService;
     }
 
     [HttpGet]
-    public async Task<List<Item>> Get()
+    public async Task<List<Weapon>> Get()
     {
-        return await _mongoDBService.GetItemsAsync();
+        return await _mongoDBService.GetWeaponAsync();
     }
 
     [HttpGet("{id}")]
-    public async Task<Item> GetById(string id)
+    public async Task<Weapon> GetById(string id)
     {
-        return await _mongoDBService.GetItemByIdAsync(id);
+        return await _mongoDBService.GetWeaponByIdAsync(id);
     }
 }
