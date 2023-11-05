@@ -10,12 +10,15 @@ public class MongoDBService
     private readonly IMongoCollection<Item> _items;
     private readonly IMongoCollection<Weapon> _weapons;
 
+    private readonly IMongoCollection<Shop> _shops;
+
     public MongoDBService(IOptions<MongoDBSettings> mongoDBSettings)
     {
         MongoClient client = new MongoClient(mongoDBSettings.Value.ConnectionURI);
         IMongoDatabase database = client.GetDatabase(mongoDBSettings.Value.DatabaseName);
         _items = database.GetCollection<Item>(mongoDBSettings.Value.ItemsCollectionName);
         _weapons = database.GetCollection<Weapon>(mongoDBSettings.Value.WeaponsCollectionName);
+        _shops = database.GetCollection<Shop>(mongoDBSettings.Value.ShopsCollectionName);
 
         try
         {
@@ -49,5 +52,22 @@ public class MongoDBService
     {
         FilterDefinition<Weapon> filter = Builders<Weapon>.Filter.Eq("Id", id);
         return await _weapons.Find(filter).FirstOrDefaultAsync();
+    }
+
+    public async Task<List<Shop>> GetShopsAsync()
+    {
+        return await _shops.Find(new BsonDocument()).ToListAsync();
+    }
+
+    public async Task<Shop> GetShopByIdAsync(string id)
+    {
+        FilterDefinition<Shop> filter = Builders<Shop>.Filter.Eq("Id", id);
+        return await _shops.Find(filter).FirstOrDefaultAsync();
+    }
+
+    public async Task<Shop> CreateShopAsync(Shop newShop)
+    {
+        await _shops.InsertOneAsync(newShop);
+        return newShop;
     }
 }
