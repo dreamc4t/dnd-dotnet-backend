@@ -7,6 +7,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));
 builder.Services.AddSingleton<MongoDBService>();
 
+
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MyAllowSpecificOrigins", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") // Allow the specific origin of your frontend app
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -22,6 +35,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("MyAllowSpecificOrigins"); // Apply the CORS policy
+
 
 app.UseAuthorization();
 
