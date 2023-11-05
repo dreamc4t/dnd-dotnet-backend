@@ -29,6 +29,7 @@ public class ShopController : Controller
         return await _mongoDBService.GetShopByIdAsync(id);
     }
 
+    [HttpPost("new")]
     public async Task<IActionResult> Post([FromBody] Shop newShop)
     {
         if (!ModelState.IsValid)
@@ -41,5 +42,16 @@ public class ShopController : Controller
         return CreatedAtAction(nameof(GetById), new { id = createdShop.Id }, createdShop);
     }
 
+    [HttpDelete("delete/{id}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        var deleteResult = await _mongoDBService.DeleteShopAsync(id);
 
+        if (deleteResult.DeletedCount == 0)
+        {
+            return NotFound();
+        }
+
+        return NoContent();
+    }
 }

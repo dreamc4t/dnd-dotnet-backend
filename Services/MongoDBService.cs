@@ -70,4 +70,11 @@ public class MongoDBService
         await _shops.InsertOneAsync(newShop);
         return newShop;
     }
+
+    public async Task<DeleteResult> DeleteShopAsync(string id)
+    {
+        var filter = Builders<Shop>.Filter.Eq(shop => shop.Id, id);
+
+        return await _shops.DeleteOneAsync(filter);
+    }
 }
