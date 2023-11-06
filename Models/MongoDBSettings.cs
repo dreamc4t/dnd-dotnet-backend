@@ -9,4 +9,6 @@ public class MongoDBSettings
     public string WeaponsCollectionName { get; set; } = null!;
     public string ShopsCollectionName { get; set; } = null!;
 
+    public string ActiveShopCollectionName { get; set; } = null!;
+
 }

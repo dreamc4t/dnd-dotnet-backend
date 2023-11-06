@@ -11,6 +11,7 @@ public class MongoDBService
     private readonly IMongoCollection<Weapon> _weapons;
 
     private readonly IMongoCollection<Shop> _shops;
+    private readonly IMongoCollection<ActiveShop> _activeShop;
 
     public MongoDBService(IOptions<MongoDBSettings> mongoDBSettings)
     {
@@ -19,6 +20,7 @@ public class MongoDBService
         _items = database.GetCollection<Item>(mongoDBSettings.Value.ItemsCollectionName);
         _weapons = database.GetCollection<Weapon>(mongoDBSettings.Value.WeaponsCollectionName);
         _shops = database.GetCollection<Shop>(mongoDBSettings.Value.ShopsCollectionName);
+        _activeShop = database.GetCollection<ActiveShop>(mongoDBSettings.Value.ActiveShopCollectionName);
 
         try
         {
@@ -77,4 +79,38 @@ public class MongoDBService
 
         return await _shops.DeleteOneAsync(filter);
     }
+
+
+    public async Task<ActiveShop> GetActiveShopAsync()
+    {
+        return await _activeShop.Find(new BsonDocument()).FirstOrDefaultAsync();
+    }
+
+    public async Task SetActiveShopAsync(string shopId)
+
+    {
+        // Find the shop by ID to ensure it exists
+        var shop = await GetShopByIdAsync(shopId);
+        if (shop == null)
+        {
+            throw new KeyNotFoundException("Shop not found with the provided ID.");
+        }
+
+        // Create an ActiveShop instance from the found shop
+        var newActiveShop = new ActiveShop
+        {
+            Id = "ACTIVE_SHOP", // Use a constant ID for the active shop
+            ShopDetails = shop
+        };
+
+
+        // Prepare the replacement operation with upsert option to either update the existing active shop or insert if none exists
+        var options = new ReplaceOptions { IsUpsert = true };
+        await _activeShop.ReplaceOneAsync(
+            filter: Builders<ActiveShop>.Filter.Eq(s => s.Id, newActiveShop.Id),
+            replacement: newActiveShop,
+            options: options);
+    }
+
+
 }
