@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/eriksund/Desktop/DndBackend/DndBackend.csproj": {}
+    "/Users/eriksund/Desktop/dnd-dotnet-backend/DndBackend.csproj": {}
   },
   "projects": {
-    "/Users/eriksund/Desktop/DndBackend/DndBackend.csproj": {
+    "/Users/eriksund/Desktop/dnd-dotnet-backend/DndBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/eriksund/Desktop/DndBackend/DndBackend.csproj",
+        "projectUniqueName": "/Users/eriksund/Desktop/dnd-dotnet-backend/DndBackend.csproj",
         "projectName": "DndBackend",
-        "projectPath": "/Users/eriksund/Desktop/DndBackend/DndBackend.csproj",
+        "projectPath": "/Users/eriksund/Desktop/dnd-dotnet-backend/DndBackend.csproj",
         "packagesPath": "/Users/eriksund/.nuget/packages/",
-        "outputPath": "/Users/eriksund/Desktop/DndBackend/obj/",
+        "outputPath": "/Users/eriksund/Desktop/dnd-dotnet-backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/eriksund/.nuget/NuGet/NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xCkvsZLwaulNTALxaBYJQXpfE8r1yMnefqkIUnVoMrLFMPPHeDme6K6wnGDrgEUqtxOPkH6D0vmndVzUgZgoog==",
+  "dgSpecHash": "S61+Ry9UblRge3o3JegeAPCzFBi5XMfYWn+I01/IUABRLgJ6cDXvJMytfsJCredutK+ilf6UW3/bC1y/P8RZ9g==",
   "success": true,
-  "projectFilePath": "/Users/eriksund/Desktop/DndBackend/DndBackend.csproj",
+  "projectFilePath": "/Users/eriksund/Desktop/dnd-dotnet-backend/DndBackend.csproj",
   "expectedPackageFiles": [
     "/Users/eriksund/.nuget/packages/awssdk.core/3.7.100.14/awssdk.core.3.7.100.14.nupkg.sha512",
     "/Users/eriksund/.nuget/packages/awssdk.securitytoken/3.7.100.14/awssdk.securitytoken.3.7.100.14.nupkg.sha512",
