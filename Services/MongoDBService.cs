@@ -15,8 +15,13 @@ public class MongoDBService
 
     public MongoDBService(IOptions<MongoDBSettings> mongoDBSettings)
     {
-        MongoClient client = new MongoClient(mongoDBSettings.Value.ConnectionURI);
+        // Load the MongoDB URI from the environment variable
+        var connectionUri = Environment.GetEnvironmentVariable("MONGO_URI");
+
+        // Initialize the MongoClient with the connection URI
+        MongoClient client = new MongoClient(connectionUri);
         IMongoDatabase database = client.GetDatabase(mongoDBSettings.Value.DatabaseName);
+
         _items = database.GetCollection<Item>(mongoDBSettings.Value.ItemsCollectionName);
         _weapons = database.GetCollection<Weapon>(mongoDBSettings.Value.WeaponsCollectionName);
         _shops = database.GetCollection<Shop>(mongoDBSettings.Value.ShopsCollectionName);

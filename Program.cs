@@ -1,7 +1,12 @@
 using DndBackend.Models;
 using DndBackend.Services;
+using dotenv.net;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Load environment variables from the .env file
+DotEnv.Load();
+
 
 // Add services to the container.
 builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));

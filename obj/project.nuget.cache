@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Na1geQiccr8TSoOpJGnuGqFbOSAN187TuBSkr1lzq9a18cy1PUx9UsD3yPQc/3ciYNk04I9CXngCP6+0d/Cp8w==",
+  "dgSpecHash": "xCkvsZLwaulNTALxaBYJQXpfE8r1yMnefqkIUnVoMrLFMPPHeDme6K6wnGDrgEUqtxOPkH6D0vmndVzUgZgoog==",
   "success": true,
   "projectFilePath": "/Users/eriksund/Desktop/DndBackend/DndBackend.csproj",
   "expectedPackageFiles": [
     "/Users/eriksund/.nuget/packages/awssdk.core/3.7.100.14/awssdk.core.3.7.100.14.nupkg.sha512",
     "/Users/eriksund/.nuget/packages/awssdk.securitytoken/3.7.100.14/awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "/Users/eriksund/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
+    "/Users/eriksund/.nuget/packages/dotenv.net/3.2.0/dotenv.net.3.2.0.nupkg.sha512",
     "/Users/eriksund/.nuget/packages/microsoft.aspnetcore.openapi/7.0.10/microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
     "/Users/eriksund/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/Users/eriksund/.nuget/packages/microsoft.extensions.logging.abstractions/2.0.0/microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
